@@ -3,19 +3,20 @@ package roi.springframework.sfrdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import roi.springframework.sfrdi.controllers.ConstructorInjectedController;
-import roi.springframework.sfrdi.controllers.MyController;
-import roi.springframework.sfrdi.controllers.PropertyInjectedController;
-import roi.springframework.sfrdi.controllers.SetterInjectedController;
+import roi.springframework.sfrdi.controllers.*;
 
 @SpringBootApplication
 public class SfrDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfrDiApplication.class, args);
-		MyController myController = (MyController) ctx.getBean("myController");
+
+		System.out.println("----------- Profile");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("----------- Primary");
+		MyController myController = (MyController) ctx.getBean("myController");
 		System.out.println(myController.sayHello());
 
 		System.out.println("-------- Propery");
