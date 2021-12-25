@@ -2,6 +2,7 @@ package roi.springframework.sfrdi.serices;
 
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class ConstructorGreetingService implements GreetingService{
     @Override
