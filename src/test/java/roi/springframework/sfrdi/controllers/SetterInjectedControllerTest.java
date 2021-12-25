@@ -2,10 +2,7 @@ package roi.springframework.sfrdi.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import roi.springframework.sfrdi.serices.GreetingService;
-import roi.springframework.sfrdi.serices.GreetingServiceImp;
-
-import static org.junit.jupiter.api.Assertions.*;
+import roi.springframework.sfrdi.serices.ConstructorGreetingService;
 
 class SetterInjectedControllerTest {
 
@@ -14,7 +11,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         setterInjectedController = new SetterInjectedController();
-        setterInjectedController.setGreetingService(new GreetingServiceImp());
+        setterInjectedController.setGreetingService(new ConstructorGreetingService());
     }
 
     @Test
